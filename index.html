@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website di GitHub Pages</title>
+  <meta name="description" content="Website statis sederhana untuk GitHub Pages" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121830;
+      --text: #e9eefc;
+      --muted: #a8b3cf;
+      --brand: #5b8cff;
+      --brand-2: #8a5bff;
+      --ring: rgba(91, 140, 255, .35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(91, 140, 255, .15), transparent 60%),
+                  radial-gradient(900px 500px at -10% 20%, rgba(138, 91, 255, .2), transparent 50%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .3px; }
+    .logo-badge { width: 32px; height: 32px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(91,140,255,.35); }
+    .logo-badge svg { width: 18px; height: 18px; fill: white; }
+    .nav a.btn { padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+    .hero { padding: 64px 0 28px; text-align: center; }
+    h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin: 0 0 12px; }
+    .lead { color: var(--muted); font-size: clamp(15px, 2.2vw, 18px); max-width: 820px; margin: 0 auto; }
+    .cta { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+      padding: 12px 16px; border-radius: 14px; font-weight: 600; border: 1px solid transparent;
+      transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 10px 26px var(--ring); }
+    .btn-ghost { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 12; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    .card h3 { margin: 6px 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(91,140,255,.14); border: 1px solid rgba(91,140,255,.35); color: #cfe0ff; font-size: 13px; }
+
+    .section { padding: 28px 0; }
+    .section h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 12px; }
+
+    .features .card { grid-column: span 12; }
+    @media (min-width: 720px) {
+      .features .card { grid-column: span 6; }
+    }
+    @media (min-width: 980px) {
+      .features .card { grid-column: span 4; }
+    }
+
+    .contact form { display: grid; gap: 12px; }
+    .input { width: 100%; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: var(--text); }
+    textarea.input { min-height: 120px; resize: vertical; }
+
+    .footer { padding: 24px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.9L18.18 22 12 18.77 5.82 22 7 14.17l-5-4.9 6.91-1.01L12 2z"/></svg>
+        </div>
+        <span>BrandKamu</span>
+      </div>
+      <a class="btn btn-ghost" href="#contact">Hubungi</a>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <span class="pill">🚀 Website GitHub Pages</span>
+    <h1>Template landing page cepat & modern.</h1>
+    <p class="lead">Tinggal fork atau salin file ini ke repo GitHub kamu, aktifkan GitHub Pages, dan situs langsung tayang. Desain responsif, akses cepat, gaya gelap elegan.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#features">Lihat Fitur</a>
+      <a class="btn btn-ghost" href="https://github.com/new" target="_blank" rel="noopener">Buat Repo</a>
+    </div>
+  </header>
+
+  <section id="features" class="section container features">
+    <h2>Fitur</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>💡 Satu File, Praktis</h3>
+        <p>Seluruh HTML, CSS, dan sedikit JavaScript ada di sini. Mudah disunting langsung dari GitHub.</p>
+      </article>
+      <article class="card">
+        <h3>📱 Responsif</h3>
+        <p>Layout berbasis grid yang otomatis menyesuaikan dari ponsel hingga desktop.</p>
+      </article>
+      <article class="card">
+        <h3>⚡ Cepat</h3>
+        <p>Tanpa framework berat. Hanya elemen yang diperlukan agar waktu muat tetap ringan.</p>
+      </article>
+      <article class="card">
+        <h3>🔒 Aman</h3>
+        <p>Konten sepenuhnya statis di GitHub Pages dengan HTTPS bawaan.</p>
+      </article>
+      <article class="card">
+        <h3>📝 Mudah Dikembangkan</h3>
+        <p>Komponen sederhana yang bisa kamu duplikasi untuk menambah bagian baru.</p>
+      </article>
+      <article class="card">
+        <h3>🌙 Dark-by-Design</h3>
+        <p>Tampilan gelap modern yang nyaman di mata, cocok untuk portofolio atau produk.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section container contact">
+    <h2>Kontak</h2>
+    <div class="grid">
+      <div class="card" style="grid-column: span 12;">
+        <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan kamu sudah terkirim (simulasi).'); this.reset();">
+          <input class="input" type="text" name="nama" placeholder="Nama" required>
+          <input class="input" type="email" name="email" placeholder="Email" required>
+          <textarea class="input" name="pesan" placeholder="Pesan"></textarea>
+          <button class="btn btn-primary" type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> BrandKamu • Dibangun untuk GitHub Pages</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
