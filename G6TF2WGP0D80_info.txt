@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satpol PP Kabupaten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="logo.png" alt="Logo Satpol PP">
+        <h1>Satpol PP Kabupaten</h1>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil</a>
+        <a href="berita.html">Berita</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>Menjaga Ketertiban & Melayani Masyarakat</h2>
+      <p>Satuan Polisi Pamong Praja hadir untuk menegakkan Peraturan Daerah, menjaga ketertiban umum, dan melindungi masyarakat.</p>
+      <a href="layanan.html" class="btn">Lihat Layanan</a>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="container cards">
+    <article class="card">
+      <h3>Profil</h3>
+      <p>Visi, misi, dan tugas pokok Satpol PP.</p>
+      <a href="profil.html">Baca Selengkapnya →</a>
+    </article>
+    <article class="card">
+      <h3>Berita</h3>
+      <p>Kegiatan terbaru Satpol PP di lapangan.</p>
+      <a href="berita.html">Baca Selengkapnya →</a>
+    </article>
+    <article class="card">
+      <h3>Layanan</h3>
+      <p>Informasi pelayanan, pengaduan, dan perizinan.</p>
+      <a href="layanan.html">Lihat Layanan →</a>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Satpol PP Kabupaten • Semua Hak Dilindungi</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
